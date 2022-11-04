@@ -22,4 +22,4 @@ function viewCurrentTime() {
   const date = new Date()
   document.getElementById("time").textContent = date.toLocaleTimeString("en-NL", {timeStyle: "short"})
 }
-setInterval(getCurrentTime, 1000)
+setInterval(viewCurrentTime, 1000)
