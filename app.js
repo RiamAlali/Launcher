@@ -17,3 +17,9 @@ fetch(
       'image-info',
     ).textContent = `Photo By: Christian Widell / Unsplash`;
   });
+// time
+function viewCurrentTime() {
+  const date = new Date()
+  document.getElementById("time").textContent = date.toLocaleTimeString("en-NL", {timeStyle: "short"})
+}
+setInterval(getCurrentTime, 1000)
