@@ -1,4 +1,3 @@
-
 fetch(
   'https://api.unsplash.com/photos/random?client_id=8U3z4H-Tfaweecdmxu322OHaCz17dpj4FUt2aszzHQA&orientation=landscape&query=nature',
 )
@@ -17,9 +16,46 @@ fetch(
       'image-info',
     ).textContent = `Photo By: Christian Widell / Unsplash`;
   });
+
 // time
 function viewCurrentTime() {
-  const date = new Date()
-  document.getElementById("time").textContent = date.toLocaleTimeString("en-NL", {timeStyle: "short"})
+  const date = new Date();
+  const time = document.getElementById('time');
+  time.textContent = date.toLocaleTimeString('en-NL', { timeStyle: 'short' });
 }
-setInterval(viewCurrentTime, 1000)
+setInterval(viewCurrentTime, 1000);
+
+//FOCUS CONTAINER
+
+const focus = document.getElementById('focus');
+focus.addEventListener('click', () => {
+  document.getElementById('time').style.fontSize = '10rem';
+  focus.style.display = 'none';
+
+  //INPUT
+  let input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'focus';
+  input.placeholder = 'type here ...';
+  const focusContainer = document.getElementById('focus-container');
+  focusContainer.appendChild(input);
+
+  //SET FOCUS BUTTON
+  const setFocus = document.createElement('button');
+  const spanText = document.createTextNode('Set focus');
+  setFocus.appendChild(spanText);
+  focusContainer.appendChild(setFocus);
+  //input length
+  setFocus.addEventListener('click', () => {
+    if (input.value.length < 3 || input.value.length > 15) {
+      setFocus.style = disabled;
+    }
+    //AFTER SETTING FOCUS STYLE
+    focus.textContent = input.value;
+    focus.style.fontSize = '6rem';
+    time.style.fontSize = '5rem';
+    focus.style.display = 'contents';
+    input.style.display = 'none';
+    setFocus.style.display = 'none';
+  });
+});
