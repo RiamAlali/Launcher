@@ -3,7 +3,6 @@ fetch(
 )
   .then((res) => res.json())
   .then((data) => {
-    console.log(data);
     document.body.style.backgroundImage = `url(${data.urls.regular})`;
     document.getElementById(
       'image-info',
@@ -59,3 +58,14 @@ focus.addEventListener('click', () => {
     setFocus.style.display = 'none';
   });
 });
+//QUOTE
+const quote = document.getElementById('quote');
+
+fetch('https://api.quotable.io/random?maxLength=60')
+  .then((response) => response.json())
+  .then((data) => {
+    quote.innerHTML = `"${data.content}"`;
+  })
+  .catch((err) => {
+    quote.innerHTML = `"Nothing great was ever achieved without enthusiasm"`;
+  });
