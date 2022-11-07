@@ -6,15 +6,22 @@
     <meta name="Launcher" content="browser Extension">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" 
+          href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
+    <form class="search" action="https://www.google.com/search?q=" method="get" target="_blank">
+      <input id="search-input" type="text" placeholder="Search.." name="q">
+      <button id="btn" type="submit"><i class="fa fa-search"></i></button>
+      </form>
     <main class="flex-main-container">
         <h1 id="time"></h1>
         <div id="focus-container">
           <p id="focus">Set today's focus</p>
         </div>
       <div class="bottom">
-        <p id="image-info"></p>
+        <p class="photo-by" id="image-info"></p>
         <p id="quote" class="quote"></p>
       </div>
     </main>
