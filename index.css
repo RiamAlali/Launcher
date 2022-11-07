@@ -1,6 +1,3 @@
-html {
-  color: white;
-}
 
 body {
   margin: 0;
@@ -14,7 +11,7 @@ body {
 }
 
 .flex-main-container {
-  height: 100vh;
+  height: 93vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -70,10 +67,18 @@ button:hover {
   margin-right: 2%;
   display: flex;
   justify-content: space-between;
+}
 
+.photo-by {
+  font-size: smaller;
 }
 
 .quote {
   font-style: italic;
   margin-left: 20%;
+}
+
+.search {
+  margin-left: 2%;
+  margin-top: 2%;
 }
