@@ -69,10 +69,3 @@ fetch('https://api.quotable.io/random?maxLength=60')
   .catch((err) => {
     quote.innerHTML = `"Nothing great was ever achieved without enthusiasm"`;
   });
-
-//clear search input after submission
-const btn = document.getElementById('btn');
-btn.addEventListener('click', () => {
-  const searchInput = document.getElementById('search-input');
-  searchInput.value = '';
-});
